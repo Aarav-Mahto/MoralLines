@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नये रोमांचक हिन्दी कहानियाँ अब हमारे साथ पढ़े</title>
+	<link rel="stylesheet" th:href="@{/CSS/headerStyle.css}">
+	<link rel="stylesheet" th:href="@{/CSS/style.css}">
+	<link rel="stylesheet" href="\static\CSS/headerStyle.css">
+	<link rel="stylesheet" href="\static\CSS/style.css">
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslate"></script> -->
+	
+
+</head>
+<body>
+<div id="container">
+	<div id="content">
+		<div id="header" th:fragment="headerParts">
+	        <div id="domain-name">
+	            <span class="domain-name-c1">Moral </span><span class="domain-name-c2">Lines </span>
+	        </div>
+	        <div class="category">
+	            <ul class="tab-list">
+	                <li><a href="" value="AllNewStory" onclick= "navigationTabs(this,event,'AllNewStory')" class="active"> नयी कहानियाँ</a></li>
+	                <li><a href="" value="MoralStory" onclick="navigationTabs(this,event,'MoralStory')">नैतिक कहानियाँ</a></li>
+	                <li><a href="" value="InterestingStory" onclick="navigationTabs(this,event,'InterestingStory')">रोचक कहानियाँ</a></li>
+	                <li><a href="" value="MotivationalStory" onclick="navigationTabs(this,event,'MotivationalStory')">प्रेरणादायक कहानियाँ</a></li>
+	                <li><a href="" value="MysteriousStory" onclick="navigationTabs(this,event,'MysteriousStory')">रहस्यमय कहानियाँ</a></li>
+	            </ul>
+	        </div>
+	        <div class="story-1">
+	            <div class="sub-header">
+	                <button class="search-button">
+	                    <div class="fixed-search-button">
+	                        <span class="material-symbols-outlined search-icon notranslate">search</span>
+	                        <span class="s-name">search</span>
+	                    </div>
+	                    <div class="search-box-container">
+	                        <input type="text" id="search-box" class="search-box" placeholder="Search item">
+	                        <span class="material-symbols-outlined close-icon-1 notranslate" onclick="blurHandler(event)">close</span>
+	                    </div>
+	                </button>
+	                <button class="showing-tab" onclick="toggleDropdown(event)">
+	                    <div class="icon">
+	                        <span class="material-symbols-outlined open-icon notranslate">menu</span>
+	                        <span class="material-symbols-outlined close-icon notranslate" style="color:darkred; display:none;">close</span>
+	                    </div>
+	                    <h2 id="topic-heading">नयी कहानियाँ</h2>
+	                </button>
+	            </div>
+	            <div class="story-no">
+	            	<input type="number" id="listLastIndex" value="0" hidden="true">
+	                <ul class="story-List">
+	                    <!-- <h2 id="topic-heading">नयी कहानियाँ</h2> -->
+	                </ul>
+	                <button onclick="loadMoreList(event)" id="load-more-list" class="load-more">See More</button>
+	                <!-- <div class="expand_more"></div> -->
+	            </div>
+	            <div class="search-suggession">
+	                <button class="search-suggession-item">
+	                    <div class="search-item-heading">
+	                        <span class="search-item-title">Search is Not Available</span>
+	                    </div>
+	                </button>
+	                <button class="search-suggession-item">
+						<div class="search-item-heading">
+							<span class="search-item-title">Search is not Available</span>
+						</div>
+	                </button>
+	                <button class="search-suggession-item">
+						<div class="search-item-heading">
+							<span class="search-item-title">Search is Not Available</span>
+						</div>
+	                </button>
+	                <h4 style="text-align: center; width: 100%; color:#666;">End</h4>
+	            </div>
+	        </div>
+	    </div>
+	    <div id="page-body" th:fragment="pageBody">
+	    	<input type="number" id="lastIndex" value="0" hidden>
+	        <div class="post-container">
+				
+				
+	        </div>
+			<button id="load-more" onclick="loadMore(event)">Load More</button>
+	    </div>
+	    
+		
+	</div>
+</div>
+<script th:src="@{/JS/scripts.js}"></script>
+<script src="\static\JS/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- +===========Post-Container Text -->
+						<!-- li  onclick="openInNewPage('story1')"><a href="">अच्छे संस्कार देने का। उन्हें बेहतर इंसान अच्छे संस्कार</a></li>
+	                    <li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li>
+						<li><a href="#footer">संभवत: यही कारण है कि आप और हम</a></li>
+	                    <li><a href="#footer">आदि की कहानियां सुन-सुन कर</a></li-->
+<!-- =======================+======Post-Container=============================================================== -->
+				<!-- div class="post">
+	                <div class="image"><img src="\static/Image/butterfly.jpg" alt="Image"></div>
+	                <div class="overlap">
+	                    <h3>बच्चों की कहानियां</h3>
+	                    <p>कहानियां जरिया हैं, बच्चों को अच्छे 
+	                        ......</p>
+	                </div>
+	            </div>
+	            <div class="post">
+	                <div class="image"><img src="\static/Image/butterfly.jpg" alt="Image"></div>
+	                <div class="overlap">
+	                    <h3>बच्चों की कहानियां</h3>
+	                    <p>कहानियां जरिया हैं, बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का। संभवत: यही कारण है कि आप और हम, सभी दादी-नानी से राजाओं की, परियों की, पशु-पक्षियों की और जिन्न आदि की कहानियां सुन-सुन कर बड़े हुए हैं। शायद यह
+	                        ......</p>
+	                </div>
+	            </div>
+	            <div class="post">
+	                <div class="image"><img src="\static/Image/butterfly.jpg" alt="Image"></div>
+	                <div class="overlap">
+	                    <h3>बच्चों की कहानियां</h3>
+	                    <p>कहानियां जरिया हैं, बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का। संभवत: यही कारण है कि आप और हम, सभी दादी-नानी से राजाओं की, परियों की, पशु-पक्षियों की और जिन्न आदि की कहानियां सुन-सुन कर बड़े हुए हैं। शायद यह
+	                        ......</p>
+	                </div>
+	            </div>
+	            <div class="post">
+	                <div class="image"><img src="\static/Image/butterfly.jpg" alt="Image"></div>
+	                <div class="overlap">
+	                    <h3>बच्चों की कहानियां</h3>
+	                    <p>कहानियां जरिया हैं, बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का। संभवत: यही कारण है कि आप और हम, सभी दादी-नानी से राजाओं की, परियों की, पशु-पक्षियों की और जिन्न आदि की कहानियां सुन-सुन कर बड़े हुए हैं। शायद यह
+	                        ......</p>
+	                </div>
+	            </div>
+				<div class="post">
+	                <div class="image"><img src="\static/Image/butterfly.jpg" alt="Image"></div>
+	                <div class="overlap">
+	                    <h3>बच्चों की कहानियां</h3>
+	                    <p>कहानियां जरिया हैं, बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का। संभवत: यही कारण है कि आप और हम, सभी दादी-नानी से राजाओं की, परियों की, पशु-पक्षियों की और जिन्न आदि की कहानियां सुन-सुन कर बड़े हुए हैं। शायद यह
+	                        ......</p>
+	                </div>
+	            </div-->

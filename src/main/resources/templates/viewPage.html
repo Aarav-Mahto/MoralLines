@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+
+	<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K4GDCMF5');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="_csrf" th:content="${_csrf.token}">
+	<meta name="_csrf_header" th:content="${_csrf.headerName}">
+	
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!--meta name="page-topic" content=""-->
+	<meta name="author" content="">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="distribution" content="Global">
+	<meta name="copyright" content="morallines.com">
+	<meta name="format-detection" content="telephone=no">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	
+	<link rel="apple-touch-icon" sizes="180x180" th:href="@{/logo/indiancarehub-w.svg}">
+	<link rel="icon" type="image/png" th:href="@{/logo/indiancarehub-b.png}">
+	
+    <title>Story Page</title>
+    <link rel="stylesheet" th:href="@{/CSS/thor.css}">
+    <link rel="stylesheet" th:href="@{/CSS/headerStyle.css}">
+    <link rel="stylesheet" th:href="@{/CSS/loadingSpinner.css}">
+	<link rel="stylesheet" href="\static\CSS/loadingSpinner.css">
+    <link rel="stylesheet" href="\static\CSS/headerStyle.css">
+	<link rel="stylesheet" href="\static\CSS/thor.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslate"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4GDCMF5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<div id="scroll-to-top">
+	    <div><span class="material-symbols-outlined scroll-top-icon">line_start_arrow_notch</span></div>
+	</div>
+	
+	<div id="container">
+		<div id="content">
+			<!--================Header================================-->
+			<div id="Header">
+			    <div class="logo-domain">
+			        <div class="logo-box"><img th:src="@{/logo/indiancarehub-w.svg}" alt="Image"></div>
+			        <div><a href="/"><span>Moral </span><span>Lines </span></a></div>
+			    </div>
+			    <div class="search-home">
+			        <button class="home-btn"><a href="/"><span class="material-symbols-outlined home-icon">home</span></a></button>
+			        <button class="search-btn"><a href="/"><span class="material-symbols-outlined search-icon">search</span>More</a></button>
+			    </div>
+			</div>
+			<!--================Page=================================-->
+			<div id="page">
+			    <!--==================== Loading Spinner ===================================-->
+			    <div id="loading-spinner">
+			        <div class="loader">
+			            <i class="fas fa-spinner"></i>
+			            <div class="dot"></div>
+			            <div class="dot"></div>
+			            <div class="dot"></div>
+			        </div>
+			    </div>
+			
+			    <!--==================== Story ================ ===================================-->
+			
+			    <div class="title">
+			        <strong class="story-title"></strong><br>
+			        <strong class="story-desc"></strong>
+			    </div>
+			    <div class="story">
+			        <div class="paragraph">
+			        	
+			        </div>
+			    </div>
+			    
+			    <!--==================== Recommendation ================ ===================================-->
+			    <hr><h4 style="text-align: center;">Read the next story</h4>
+			    <hr><h3 style="text-align: center;">Recommended Section</h3>
+			    <div class="recommendation">
+			        
+			    </div>
+			</div>
+			
+			<!--================Footer================================-->
+			<div id="footer" th:replace="~{footer.html}"></div>
+			<script th:src="@{/JS/viewPage.js}"></script>
+		</div>
+	</div>
+</body>
+</html>
+
+<!-- div id="language-option">
+    <select>
+        <option value="" disabled selected>Language</option>
+        <option value="option2">Hindi</option>
+        <option value="option3">English</option>
+        <option value="option4">Bengoli</option>
+        <option value="option5">Tamil</option>
+        <option value="option5">Telugu</option>
+    </select>  
+</div-->
+
+<!-- Testing Page ==================================================
+<div class="title">
+        <strong class="story-title">हिन्दी कहानी व उपन्यास के क्षेत्र</strong><br>
+        <strong class="story-desc">हिन्दी कहानी व उपन्यास के क्षेत्र को ‘प्रेमचंद युग’ दिखाने वाले बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का</strong>
+    </div>
+    <div class="story">
+        <div class="image1"><img th:src="@{/Image/img4.jpg}" alt="Image Visualization of story"></div>
+        <div class="paragraph">
+            
+        
+        </div>
+    </div>
+
+
+
+ -->
+
+
+<!-- Pragraph========================================================== -->
+			<!-- p>
+                कहानियां जरिया हैं, बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का। संभवत: यही कारण है कि आप और हम, सभी दादी-नानी से राजाओं की, परियों की, पशु-पक्षियों की और जिन्न आदि की कहानियां सुन-सुन कर बड़े हुए हैं। शायद यह उन कहानियों का जादू ही था, जो हमें एक अनोखी दुनिया में ले जाता था और कहानी के अंत में, जो सीख मिलती थी, वो आज भी आपके और हमारे जहन में ताजा है।
+            </p>
+            <p>
+                बेशक, अब जमाना बदल गया है, लेकिन अपने बचपन में सुनी कहानियां आज भी पूरी तरह से तार्किक हैं। हां, इन कहानियों को सुनाने और बताने का जरिया जरूर बदल गया है। किताबों के रास्ते अपना सफर तय करती हुईं ये कहानियां इंटरनेट पर भी अपना जादू बिखेर रही हैं। यही कारण है कि मॉमजंक्शन आपके बच्चों के लिए ऐसी तमाम किस्से-कहानियों को एक मंच पर लेकर आया है। यहां आपको पंचतंत्र से लेकर रहस्यमय दुनिया की सैर कराने वाली बच्चों की अच्छी-अच्छी कहानियां पढ़ने को मिलेंगी। इन कहानियों के जरिए आप न सिर्फ अपने बच्चों का मनोरंजन कर सकेंगे, बल्कि आपके बचपन की यादें भी फिर से ताजा हो जाएंगी। साथ ही ये कहानियां बच्चों के लिए हिंदी में हों, तो कहना ही क्या।
+            </p>
+        <div class="image2"><img th:src="@{/Image/img4.jpg}" alt="Image Visualization of story in flip mode"></div>
+            <p>
+                हिन्दी कहानी व उपन्यास के क्षेत्र को ‘प्रेमचंद युग’ दिखाने वाले मुंशी प्रेमचंद का जन्म 31 जुलाई 1880 को बनारस में हुआ था। मुंशी प्रेमचंद की कहानी न सिर्फ हिंदी में पढ़ सकते हैं, बल्कि उर्दू में भी इनके साहित्य पढ़े जा सकते हैं। प्रेमचंद की कहानियों में अपनापन, सामाजिक दशा का वर्णन, जात-पात के भेदभाव से लेकर गरीबी और अमीरी के बीच झलकते दर्द को साफ महसूस किया जा सकता है। यही वजह है कि मुंशी प्रेमचंद की कहानी पढ़ते हुए बच्चों से लेकर बड़े-बुजुर्ग तक सभी रम जाते हैं। प्रेमचंद की कहानियों में सेवासदन, गबन, कर्मभूमि, प्रेमाश्रम, गोदान, रंगभूमि व निर्मला जैसे कई उपन्यास लोकप्रिय हैं। इसके अलावा कफन, पंच परमेश्वर, पूस की रात, बड़े घर की बेटी, दो बैलों की कथा और बूढ़ी काकी जैसी 300 से अधिक कहानियां भी चर्चित हैं। आइए, एक बार फिर घुल-मिल जाइए, मुंशी प्रेमचंद की इन कलात्मक रचनाओं में।
+            </p>
+            <p>
+                90 के दशक में लोगों के बीच अलिफ लैला नाम का सीरियल काफी फेमस हुआ था। अलिफ लैला के किस्से और कहानियां लोगों के दिलों-दिमाग में आज भी ताजा है। ये शब्द अरबी भाषा के 'अलफ लैला' से लिया गया है, जिसका अर्थ होता है- एक हजार रातें। अलिफ लैला अरब देशों की कहानियों का एक ऐसा संग्रह है, जिसमें प्रेम, धोखा, ग़म, ख़ुशी, सुख-दुख और वास्तविकता का अद्भुत समन्वय मिलता है। अलिफ लैला की कहानियां बच्चों से लेकर बुजुर्गों तक सभी के बीच लोकप्रिय हैं। इसी में अलीफ लैला सिंदबाद की कहानियां भी शामिल हैं। एक जमाने में तो इसकी कहानियां बच्चों के मनोरंजन का प्रमुख साधन हुआ करती थीं। ये कहानियां न सिर्फ उनका मनोरंजन करेंगी, बल्कि उनका बौद्धिक विकास और तार्किक शक्ति को भी सुदृढ़ करेंगी। सिंदबाद जहाजी की कहानियां तो आपको एक रोमांचक सफर पर ले जाएंगी। इसलिए, हम आपके लिए लेकर आए हैं अलिफ लैला के रोचक किस्से और कहानियां, जो बच्चों के जीवन को सही दिशा देंगे।
+            </p-->
+<!-- Recommended========================================================== -->
+            <!-- div class="suggest-box">
+            <div class="sugg-image"><img src="\static\Image/img4.jpg" alt="Image"></div>
+            <div class="sugg-overlap">
+                <strong class="story-title">हिन्दी कहानी व उपन्यास के क्षेत्र</strong><br>
+                <strong class="story-desc">हिन्दी कहानी व उपन्यास के क्षेत्र को ‘प्रेमचंद युग’ दिखाने वाले बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का</strong>
+            </div>
+        </div>
+        <div class="suggest-box">
+            <div class="sugg-image"><img src="\static\Image/img3.jpg" alt="Image"></div>
+            <div class="sugg-overlap">
+                <strong class="story-title">हिन्दी कहानी व उपन्यास के क्षेत्र</strong><br>
+                <strong class="story-desc">हिन्दी कहानी व उपन्यास के क्षेत्र को ‘प्रेमचंद युग’ दिखाने वाले बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का</strong>
+            </div>
+        </div>
+        <div class="suggest-box">
+            <div class="sugg-image"><img src="\static\Image/img1.jpg" alt="Image"></div>
+            <div class="sugg-overlap">
+                <strong class="story-title">हिन्दी कहानी व उपन्यास के क्षेत्र</strong><br>
+                <strong class="story-desc">हिन्दी कहानी व उपन्यास के क्षेत्र को ‘प्रेमचंद युग’ दिखाने वाले बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का</strong>
+            </div>
+        </div>
+        <div class="suggest-box">
+            <div class="sugg-image"><img src="\static\Image/img4.jpg" alt="Image"></div>
+            <div class="sugg-overlap">
+                <strong class="story-title">हिन्दी कहानी व उपन्यास के क्षेत्र</strong><br>
+                <strong class="story-desc">हिन्दी कहानी व उपन्यास के क्षेत्र को ‘प्रेमचंद युग’ दिखाने वाले बच्चों को अच्छे संस्कार देने का। उन्हें बेहतर इंसान बनाने का</strong>
+            </div>
+        </div-->

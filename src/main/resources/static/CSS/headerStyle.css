@@ -1,0 +1,317 @@
+/* Hindi Font Style font-family: "Yantramanav", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+/* Hindi Font Style font-family: "Rozha One", serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+/* Hindi Font Style font-family: "Kalam", cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+/* English Font Style font-family: 'Poppins', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+*{
+    box-sizing: border-box;
+    transition: all 0.4s;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size:16px;
+}
+#header{
+    z-index: 1;
+    background-color: #f0f0f0;
+    width: 100%;
+    min-height: 150px;
+}
+#domain-name{
+    text-align: center;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    padding:6px 0px;
+    background-color: #F0F0F0;
+    border-bottom: 1px solid gray;
+}
+#domain-name span{
+    font-size: 1.5em;
+}
+#domain-name span:nth-child(1){
+    color:rgb(7, 166, 174);
+}
+#domain-name span:nth-child(2){
+    color:rgb(221, 77, 5);
+}
+#domain-name span:nth-child(3){
+    color:rgb(163, 7, 124);
+}
+#header .category{
+    overflow-x: auto; 
+    text-align: center; 
+    padding-top: 30px;
+}
+
+.category::-webkit-scrollbar {
+    height: 2px;
+}
+.category::-webkit-scrollbar-track {
+    background: #666567;
+}
+
+.category::-webkit-scrollbar-thumb {
+    background: #d1d1d3;
+}
+
+
+#header .category .tab-list{
+    display: inline-block;
+    white-space: nowrap; 
+    overflow-x: auto;
+    transition: all 0.5s ease;
+}
+#header .category .tab-list li{
+    display: inline-block;
+    margin: 0 10px;
+    padding:10px 0;
+}
+#header .category .tab-list li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    font-size: 1.3em;
+    color:#101010;
+    padding:5px 0;
+}
+#header .category .tab-list li a.active{
+    font-weight: bold; 
+    color: green;
+    font-size: 1.7em;
+    border-bottom: 2px solid green;
+
+}
+#header .story-1{
+    position: relative;
+    left:0;
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+    max-height: 14vh;
+    overflow: hidden;
+    padding:20px 15px 0px 20px;
+}
+#header .dropdown-on{
+    max-height: 70vh !important;
+    overflow: auto;
+    transition: max-height 0.5s ease-in-out !important;
+}
+
+/*=========================================================================*/
+.sub-header{
+    width:100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    position: relative;
+}
+.search-button{
+    margin: 5px 5px;
+    padding: 5px 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    font-size: 1.2em;
+    border:none;
+    top:-5px;
+}
+.fixed-search-button{
+    border:0.5px solid green;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+.search-box{
+    padding:8px 40px 8px 15px;
+    display: block;
+    width:90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border:1px solid #161616;
+    font-size: 1.1em;
+}
+.search-box:focus{
+    outline: 0.5px solid darkgreen;
+    transform: scale(1.05,1.05);
+}
+.search-button .search-icon{
+    position: relative;
+    top:8px;
+    left:7px;
+    transform: scale(1.1,1.1);
+}
+.search-box-container{
+    position: absolute;
+    right:0;
+    top:0;
+    z-index: 1;
+    width:100%;
+    display: none;
+    padding-top: 2px;
+}
+.search-box-container .close-icon-1{
+    position: absolute;
+    top:9px;
+    right:6%;
+    font-size: 1.5em;
+    z-index: 3;
+    color:darkred;
+}
+
+#header .story-1 .showing-tab{
+    width:62%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left:0;
+    border: none;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#header .story-1 .showing-tab .icon{
+    position: relative;
+    left: 0;
+}
+#header .story-1 .showing-tab .icon span{
+    font-size: 2.3em;
+}
+#header .story-1 .showing-tab h2{
+    line-height: 20px;
+    font-size: 1.7em;
+    font-family: "Yantramanav", sans-serif;
+    color:#000;
+}
+#header .story-1 .story-no{
+    margin: 0;
+    max-width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    font-size: 1em;
+    display: none;
+}
+#header .story-1 .story-no li:first-child{
+    margin-top: 20px;
+}
+#header .story-1 .story-no li:last-child{
+    margin-bottom: 40px;
+}
+#header .story-1 .story-no li{
+    list-style-type: decimal;
+    padding-left: 10px;
+}
+#header .story-1 .story-no li a{
+    text-decoration: none;
+    padding:5px 0px;
+    width:100%;
+    color:#161616;
+    display: block;
+    transition: all 0.3s;
+}
+#header .story-1 .story-no li:hover{
+    background-color: hsla(331, 84%, 50%, 0.813);
+}
+#header .story-1 .story-no li a.active{
+    text-decoration: none;
+}
+
+.search-suggession{
+    width:100%;
+    z-index: 10;
+    overflow: scroll;
+    min-height: 70vh;
+    max-height:90vh;
+    padding:20px 15px 30px 0;
+    display: none;
+    margin: 0 auto;
+}
+.search-suggession .search-suggession-item{
+    width:100%;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding:5px 10px;
+    border:none;
+    margin: 5px auto;
+    background-color: white;
+    border-radius: 5px;
+}
+.search-suggession .search-suggession-item .search-item-heading{
+    font-size: 1.3em;
+    text-align: left;
+}
+@media screen and (min-width:400px) {
+    #header .category .tab-list li a{
+        font-size: 18px;
+    }
+    #header .story-1 .story-no .story-List ul li a{
+        font-size: 12px;
+    }
+
+}
+@media screen and (min-width:900px){
+    .sub-header{
+        width:95%;
+        display: block;
+        position: relative;
+    }
+    .showing-tab{
+    }
+    .showing-tab .icon{
+        display: none;
+    }
+    .search-button{
+        display: none;
+    }
+    #topic-heading{
+        width:100%;
+    }
+    #header .story-1{
+        width: 35%;
+        position: fixed;
+        left:0;
+        overflow: hidden;
+    }
+    #header .story-1 .story-no{
+        margin: 0;
+        width: 30%;
+        max-height: 50vh;
+        position: fixed;
+        z-index: 100;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        font-size: 14px;
+        display: block;
+        padding-right: 5px;
+    }
+    #load-more-list{
+
+    }
+    #page-body{
+        max-width:65%;
+        margin:0 !important;
+        position: relative;
+        left: 33%;
+    }
+    #header .category{
+        padding-top: 0px;
+    }
+    
+}

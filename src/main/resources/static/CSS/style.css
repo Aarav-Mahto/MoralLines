@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+/* Hindi Font Style font-family: "Yantramanav", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+/* Hindi Font Style font-family: "Rozha One", serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+/* Hindi Font Style font-family: "Kalam", cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+/* English Font Style font-family: 'Poppins', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#page-body{
+    width:98%;
+    box-shadow: 0px 0px 5px 2px lightgray;
+    margin:0 auto;
+    background-color: #FFF;
+    box-sizing: border-box;
+    padding-bottom:50px;
+}
+.post {
+    position: relative;
+    display: inline-block; 
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding: 0;
+    text-align: center;
+    width: 320px;
+    height: 400px;
+    box-shadow: 0px 0px 2px 2px lightgray;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+}
+.image{
+    height: 400px;
+    width:320px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #8f036e;
+}
+.image img{
+    height: 100%;
+    min-width: 100%;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+}
+.overlap {
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    box-shadow: -15px -25px 20px -5px rgba(0, 0, 0, 0.6);
+    color:white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.post-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+#load-more, .load-more{
+	display:block;
+	cursor: pointer;
+    background-color: #A0025E;
+    color:white;
+    border:none;
+    padding:5px 20px;
+    font-size:1.1em;
+    position:relative;
+    left:60%;
+    margin: 20px 0;
+}
+#load-more:hover, .load-more:hover{
+    transform: scale(1.05,1.05);
+}
+
+
+
+
+
+
+
+/* Scroll To Top */
+#scroll-to-top {
+    position: fixed;
+	z-index: 101;
+    bottom: 100px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#scroll-to-top div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#scroll-to-top div a{
+    color:white;
+}
+.scroll-top-icon {
+    font-family: 'Material Icons Rounded';
+    font-size: 24px;
+	transform: rotate(90deg);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #afc9e7;
+    border-radius: 10px;
+  }
+  
+  /* Customize the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, rgb(142, 5, 135),rgb(2, 118, 136));
+    border-radius: 10px;
+  }
+  
+  /* Customize the scrollbar thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5e0228;
+    cursor: pointer;
+  }
+  
+  /* Customize the scrollbar itself */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 0px; /* For horizontal scrollbar */
+  }
+
+@media screen and (min-width:500px) {
+    .post {
+        width: 220px;
+        height: 300px;
+        margin: 20px 5px;
+    }
+    .image{
+        height: 300px;
+        width:220px;
+    }
+    .overlap {
+        width: 220px;
+    }
+    .overlap h3{
+        font-size: 18px;
+    }
+    .overlap p{
+        font-size: 14px;
+    }
+    #page-body{
+        width:90%;
+        box-shadow: 0px 0px 0px 0px darkgray;
+        padding: 0px 20px 50px 20px;
+    }
+}

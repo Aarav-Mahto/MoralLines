@@ -1,0 +1,332 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Hindi Font Style font-family: "Yantramanav", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+/* Hindi Font Style font-family: "Kalam", cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+body {
+    font-family: 'Poppins','Yantramanav', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+html{
+    scroll-behavior: smooth;
+}
+#Header{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    background-color: #f0f0f0;
+}
+#Header .logo-domain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin:10px 0%;
+}
+#Header .logo-domain a{
+    color:#000;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+#Header .logo-domain .logo-box{
+    height:80px;
+    width:80px;
+    border:1px solid black;
+    overflow: hidden;
+    border-radius: 50%;
+    border-bottom:1px solid #ec03a2;
+    border-top:1px solid #fcb204;
+    border-left:1px solid #5001ef;
+    border-right:1px solid #06f78b;
+}
+#Header .logo-domain .logo-box img{
+    /* width:100%; */
+    height: 100%;
+}
+.logo-domain div a span{
+    font-size: 1em;
+}
+.logo-domain div a span:nth-child(1){
+    color:rgb(7, 166, 174);
+}
+.logo-domain div a span:nth-child(2){
+    color:rgb(221, 77, 5);
+}
+.logo-domain div a span:nth-child(3){
+    color:rgb(163, 7, 124);
+}
+
+
+#Header .search-home{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: right;
+    margin:0px 10% 10px 10%;
+}
+#Header .search-home button{
+    font-size: 1.5em;
+    padding:0 5px 5px 5px;
+}
+#Header .search-home button a{
+    text-decoration: none;
+    color:gray;
+}
+#Header .search-home .home-btn{
+    margin: 0 20px;
+    border-bottom:1px solid #333;
+    border-top:1px solid #061577;
+    border-left:1px solid #58c703;
+    border-right:1px solid #ec6f03;
+}
+#Header .search-home .search-btn{
+    padding-left:10px;
+    padding-right: 15px;
+    border-radius: 25px;
+    border:1px solid black;
+    background-color: white;
+    font-size: 1.2em;
+}
+#Header .search-home .search-btn .search-icon{
+    font-size: 25px;
+    position: relative;
+    top:7px;
+}
+#Header .search-home .home-btn .home-icon{
+    font-size: 25px;
+    position: relative;
+    top:5px;
+    color:darkgreen;
+}
+
+
+
+
+
+
+#page{
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#page .title{
+    text-align: center;
+    font-family: 'Poppins','Kalam', sans-serif;
+}
+#page .title strong{
+    color: #222;
+}
+#page .title .story-title{
+    font-size: 1.7em;
+}
+#page .title .story-desc{
+    font-size: 1.2em;
+}
+#page .story{
+    
+}
+#page .story .image1, #page .story .image2{
+    width:100%;
+}
+#page .story .image1 img{
+    width:100%;
+}
+#page .story .image2 img{
+    width:100%;
+    transform: scaleX(-1);
+}
+#page .story .paragraph{
+    
+}
+#page .story .paragraph p{
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+/* Styling To Suggession */
+.recommendation{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.suggest-box {
+    position: relative; 
+    padding: 0;
+    margin: 10px auto;
+    border: none;
+    overflow: hidden;
+    height: 400px;
+    width:320px;
+}
+.suggest-box .sugg-image{
+    max-width: 320px;
+    height: 400px;
+    overflow: hidden;
+    position: relative; 
+    display: inline-block;
+}
+.suggest-box .sugg-image img{
+    width: 100%;
+    min-height: 100%;
+    object-position: center center;
+}
+.sugg-overlap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 300px; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1; 
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding:10px;
+    box-shadow: -10px -10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+.sugg-overlap .story-title{
+    font-family: 'Poppins','Kalam', sans-serif;
+    font-size: 1.4em;
+    color:#f7f30a
+}
+.sugg-overlap .story-desc{
+    font-family: 'Poppins','Yantramanav', sans-serif;
+    font-size: 16px;
+    color:white;
+}
+
+
+
+/* Footer Section =================================================================================*/
+#footer{
+    height:100px;
+    width:100%;
+    margin:20px auto 0px auto;
+    border:1px solid black;
+    padding:10px;
+    box-sizing: border-box;
+    background-color: #161616;
+}
+#footer ul{
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} 
+#footer ul li{
+    list-style-type: none;
+}
+#footer ul li a{
+    text-decoration: none;
+    color: #F1F1EF;
+}
+
+/* Scroll To Top */
+#scroll-to-top {
+    position: fixed;
+	z-index: 101;
+    bottom: 100px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#scroll-to-top div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#scroll-to-top div a{
+    color:white;
+}
+.scroll-top-icon {
+    font-family: 'Material Icons Rounded';
+    font-size: 24px;
+	transform: rotate(90deg);
+}
+
+/* Language Swiching Options */
+#language-option{
+    position: fixed;
+	z-index: 101;
+    top: 30%;
+    left: -5px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+#language-option select{
+    font-size: 1.2em;
+    padding:5px 3px;
+    border: 1px solid #1e1d1d;
+}
+#language-option select option{
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    height: 20px;
+}
+#language-option select option:hover{
+    background-color: #5001ef;
+}
+
+
+
+@media screen and (min-width:500px) {
+    #page .story .image1, #page .story .image2{
+        width: 220px;
+        height: 300px;
+        margin:10px auto;
+    }
+    #page .story .image1 img{
+        height:100%;
+        min-width: 100%;
+    }
+    #page .story .image2 img{
+        height:100%;
+        min-width: 100%;
+        transform: scaleX(-1);
+    }
+    .suggest-box {
+        width: 220px;
+        height: 300px;
+        margin: 20px 5px;
+    }
+    .suggest-box .sugg-image{
+        height: 300px;
+        width:220px;
+    }
+    .sugg-overlap {
+        width: 220px;
+    }
+    #Header .logo-domain{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin:10px 10%;
+    }
+}
+
+

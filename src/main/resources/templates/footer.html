@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Nunito';
+    position: relative;
+}
+#content{
+    
+}
+#footer{
+    width:100%;
+    margin:0px auto 0px auto;
+    border:1px solid black;
+    padding:10px;
+    box-sizing: border-box;
+    background-color: #161616;
+    position: relative;
+    bottom: 0%;
+}
+#footer ul{
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} 
+#footer ul li{
+    list-style-type: none;
+}
+#footer ul li a{
+    text-decoration: none;
+    color: #F1F1EF;
+}
+</style>
+</head>
+<body>
+<div id="footer">
+    <ul>
+        <li><a href="/hindi-story/">Home</a></li>
+        <li><a href="/contactUs">Contact_Us</a></li>
+        <li><a href="/terms">Terms_Of_Use</a></li>
+        <li><a href="/disclimer">Disclimer</a></li>
+        <li><a href="/policy">Privacy_Policy</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+/*var lastScrollTop = 0;
+$(window).scroll(function() {
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop) {
+        // Scroll down
+        $('#footer').slideUp();
+    } else {
+        // Scroll up
+        $('#footer').slideDown();
+    }
+    lastScrollTop = st;
+});*/
+
+</script>   
+</body>
+</html>

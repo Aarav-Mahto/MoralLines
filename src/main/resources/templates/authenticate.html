@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>MyAdmin</title>
+    <link rel="stylesheet" th:href="@{/CSS/adminPannel.css}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+<div id="container">
+<div id="content">
+    <div id="header">
+    </div>
+    <div id="page">
+    	<div id="login_register">
+            <form th:action="@{/loginData}" method="POST" class="form login-page">
+                <h3>Login</h3>
+                <h4 th:text="${session.sessionMsg}"></h4>
+                <div class="input-group">
+                    <input type="text" name="username_email" class="input user-name" required>
+                    <label class="placeholder">UserName</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password_pass" class="input pass-word" required>
+                    <label class="placeholder">Password</label>
+                </div>
+                <button type="submit">Login</button><br>
+                <button>Login By Google</button>
+            </form>
+    	</div> 
+    </div>
+    <div id="footer">
+
+    </div>
+</div>
+</div>
+</body>
+</html>

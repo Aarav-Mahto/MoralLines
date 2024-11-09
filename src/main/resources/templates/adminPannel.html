@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    
+    <meta name="_csrf" th:content="${_csrf.token}">
+	<meta name="_csrf_header" th:content="${_csrf.headerName}">
+	
+    <title>MyAdmin</title>
+    <link rel="stylesheet" th:href="@{/CSS/adminPannel.css}">
+	<!-- link rel="stylesheet" href="\static\CSS/adminPannel.css"-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+		if(window.history.replaceState){
+			//window.history.replaceState(null, null, window.location.href)
+		}
+	</script>
+</head>
+<body>
+<div id="logout-btn">
+	<a href="/logout"><span class="material-symbols-outlined">logout</span></a>
+	<label id="logout-popup">Logout</label>
+</div>
+<div id="container">
+<div id="content">
+    <div id="header">
+    	<div class="action-choice">
+            <button onclick="btnNavigate('insert')" style="border:1px solid green;">Insert Data</button>
+            <button onclick="btnNavigate('update')" style="border:1px solid rgb(230, 242, 7);">Update Entry</button>
+            <button onclick="btnNavigate('delete')" style="border:1px solid red;">Delete Entry</button>
+            <button onclick="showDatabase(event)" style="border:1px solid rgb(212, 4, 181);">Show Data</button>
+            <button onclick="btnNavigate('register')">Register New User</button>
+        </div>
+    </div>
+    <div id="page">
+        <th:block th:if="${session.view == 'register'}">
+        	<div id="login_register">
+	            <form th:action="@{/registerUser}" th:object="${registerClass}" method="POST" class="form register-page">
+	                <h3>Register</h3>
+					<h4 th:text="${session.sessionMsg}" th:style="${'color:'+session.color}"></h4>
+	                
+	                <div class="input-group">
+	                    <input type="text" name="name" th:field="*{name}" class="input u-full-name" required>
+	                    <label class="placeholder">Full Name</label>
+	                </div>
+	                <div class="input-group">
+	                    <input type="email" name="email" th:field="*{email}" class="input uemail" required>
+	                    <label class="placeholder">Email id</label>
+	                </div>
+	                <div class="input-group">
+	                    <input type="number" name="phone" th:field="*{phone}" class="input uphone" required>
+	                    <label class="placeholder">Phone Number</label>
+	                </div>
+					<div class="input-group">
+						<select name="user_type" th:field="*{user_type}" required>
+							<option value="" selected>Control Over</option>
+							<option value="ADMIN">Admin</option>
+							<option value="USER">Editor</option>
+						</select>
+					</div>
+	                <div class="input-group">
+	                    <input type="password" name="password" th:field="*{password}" class="input upass-1" required>
+	                    <label class="placeholder">Create Password</label>
+	                </div>
+	                <div class="input-group">
+	                    <input type="text" name="confirmPassword" th:field="*{confirmPassword}" class="input upass-2" required>
+	                    <label class="placeholder">Confirm Password</label>
+	                </div>
+	                <button type="submit">Register</button>
+	                <br>
+	                <button disabled>Login By Google</button>
+	            </form>
+	        </div>
+        </th:block>
+        
+        <th:block th:if="${session.view == 'insert'}">
+        	<form th:action="@{/insertData}" method="post" th:object="${allStory}" class="form inserData" enctype="multipart/form-data">
+                <h3>Insert data</h3>
+                <h4 th:text="${session.sessionMsg}" th:style="${'color:'+session.color}"></h4>
+				<div class="input-group">
+					<select class="select-category" name="category" th:field="*{category}" required></select>
+				</div>
+                <div class="input-group">
+                    <input type="text" name="storyId" th:field="*{storyId}" class="input story_name" required>
+                    <label class="placeholder">Story Id</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="title" th:field="*{title}" class="input story_name" required>
+                    <label class="placeholder">Story Title</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="description" th:field="*{description}" class="input story_desc" required>
+                    <label class="placeholder">Story Description</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="desc_for_search" th:field="*{desc_for_search}" class="input search_desc" required>
+                    <label class="placeholder">Description for search (ex. ek chor ki kahani)</label>
+                </div>
+                <div class="input-group">
+                    <textarea name="story" th:field="*{story}" class="input full_story" cols="30" rows="5" required></textarea>
+                    <label class="placeholder">Full Story</label>
+                </div>
+                <div class="input-group">
+                    <input type="file" name="partFile" th:field="*{partFile}" class="input story_image" required>
+                    <label class="placeholder"></label>
+                </div>
+                <button type="submit">INSERT</button>
+            </form>
+        </th:block>
+        <th:block th:if="${session.view == 'update'}">
+	        <div class="forms">
+	            <form th:action="@{/findData}" th:object="${allStory}" method="post" class="form updateData">
+	                <h3>Search For Update</h3>
+	                <h4 th:text="${session.sessionMsg}" th:style="${'color:'+session.color}"></h4>
+	                <div class="input-group">
+						<select class="select-category" name="category" th:field="*{category}"></select>
+					</div>
+	                <div class="input-group">
+	                    <input type="text" name="storyId" th:field="*{storyId}" class="input story_desc" required>
+	                    <label class="placeholder">Unique Id</label>
+	                </div>
+	                <button type="submit">search</button>
+	            </form>
+            </div>
+        </th:block>
+          <th:block th:if="${session.view == 'updateEntry'}">
+           <div class="forms">
+            <form th:action="@{/updateEntry}" th:object="${allStory}" method="post" class="form updateData"  enctype="multipart/form-data">
+	            <h3>Update data</h3>
+                <h4 th:text="${session.sessionMsg}" th:style="${'color:'+session.color}"></h4>
+				<div class="input-group">
+					<select class="select-category" name="category" th:field="*{category}" required></select>
+				</div>
+                <div class="input-group">
+                    <input type="text" name="title" th:field="*{title}" class="input story_name" required>
+                    <label class="placeholder">Story Title</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="description" th:field="*{description}" class="input story_desc" required>
+                    <label class="placeholder">Story Description</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="desc_for_search" th:field="*{desc_for_search}" class="input search_desc" required>
+                    <label class="placeholder">Description for search (ex. ek chor ki kahani)</label>
+                </div>
+                <div class="input-group">
+                    <textarea name="story" th:field="*{story}" class="input full_story"  cols="30" rows="5" required></textarea>
+                    <label class="placeholder">Full Story</label>
+                </div>
+                <div class="input-group">
+					<select name="imageDeleteKarnaHai" required>
+						<option value="" selected>पहले वाला फोटो delete करना है ?</option>
+						<option value="yes">हाँ</option>
+						<option value="no">नहीं</option>
+					</select>
+				</div>
+                <div>Old Image<img th:src="${img}" height=60 width=60></div>
+                <div class="input-group">
+                    <input type="file" name="partFile" th:field="*{partFile}" class="input story_image">
+                    <label class="placeholder"></label>
+                </div>
+                <button type="submit">UPDATE</button>
+            </form>
+        </div>
+        </th:block>
+        
+       	<th:block th:if="${session.view == 'delete'}">
+        	<div class="forms">
+	            <form th:action="@{/findToDelete}" th:object="${allStory}" method="post" class="form deleteData">
+	                <h3>Search For Delete</h3>
+	                <h4 th:text="${session.sessionMsg}" th:style="${'color:'+session.color}"></h4>
+					<div class="input-group">
+						<select class="select-category" name="category" th:field="*{category}"></select>
+					</div>
+	                <div class="input-group">
+	                    <input type="text" name="storyId" th:field="*{storyId}" class="input story_desc" required>
+	                    <label class="placeholder">Entry No./Unique Id</label>
+	                </div>
+	                <button type="submit">search</button>
+                </form>
+              </div>
+	        </th:block>
+	        <th:block th:if="${session.view == 'deleteEntry'}">
+            	<div class="forms">
+	            	<form th:action="@{/deleteEntry}" method="post" th:object="${allStory}" class="form deleteData">
+		            	<h3>Delete This</h3>
+		                <h4 th:text="${session.sessionMsg}" th:style="${'color:'+session.color}"></h4>
+						<div class="input-group">
+							<select name="imageDeleteKarnaHai" required>
+								<option value="" selected>image Bhi delete karna h ?</option>
+								<option value="yes">yes</option>
+								<option value="no">no</option>
+							</select>
+						</div>
+		                <div class="input-group">
+		                    <input type="text" name="storyId" th:field="*{storyId}" class="input story_desc" required disabled>
+		                </div>
+		                <div class="input-group">
+		                    <input type="text" name="title" th:field="*{title}" class="input story_name" required disabled>
+		                </div>
+		                <div class="input-group">
+		                    <input type="text" name="description" th:field="*{description}" class="input story_desc" required disabled>
+		                </div>
+		                <button type="submit">DELETE</button>
+		            </form>
+		        </div>
+	        </th:block>
+        <th:block th:if="${session.view == 'viewDatabase' && list != null && !#lists.isEmpty(list)}">
+	        <div class="forms">
+	        	
+	            <div class="view-database">
+	                <h2>Entries</h2>
+	                <div class="input-group">
+						<select class="select-category" id="view-database-by-category" name="category" required>
+						</select>
+					</div>
+					<table>
+						<tr>
+							<th>Entries No</th>
+							<th>Story Id</th>
+							<th>Title</th>
+							<th>Description</th>
+							<th>FullStory</th>
+							<th>Image</th>
+							<th>Category</th>
+							<th>Entry Date</th>
+							<th>Enter By</th>
+							<th>Updated</th>
+							<th>Updated_by</th>
+						</tr>
+						<tbody id="table_body">
+							<tr th:each="story : ${list}">
+								<td th:text="${story.id}"></td>
+								<td th:text="${story.storyId}"></td>
+								<td th:text="${story.title}"></td>
+								<td th:text="${story.description}"></td>
+								<td><ul><li th:attr="data-entryno=${story.storyId}" onclick="showStory(this.getAttribute('data-entryno'))">Story</li></ul></td>
+								<td th:text="${story.img}"></td>
+								<td th:text="${story.category}"></td>
+								<td th:text="${story.entryDate}"></td>
+								<td th:text="${story.enteredBy}"></td>
+								<td th:text="${story.updatedDate}"></td>
+								<td th:text="${story.updatedBy}"></td>
+							</tr>
+						</tbody>
+					</table>
+	                <button hidden>Next +50 Entries</button>
+	            </div>
+	        </div> 
+        </th:block>
+        
+    </div>
+    <div id="footer">
+
+    </div>
+</div>
+</div>
+<script th:src="@{/JS/Admin.js}"></script>
+<!-- script src="\static\JS/Admin.js"></script-->
+</body>
+</html>
