@@ -52,14 +52,9 @@ This platform allows readers to dive into **immersive narratives** with seamless
 
 ## 📸 Live Preview  
 
-### 🏠 Homepage  
-![Homepage](https://github.com/user-attachments/assets/775eb654-bc8c-4126-9d51-a0e6d5f0f9f6)  
-
-### 📜 Story Page  
-![Story Page](https://github.com/user-attachments/assets/2aeaea6a-92d2-41c4-989c-c69f55498e7d)  
-
-### 📂 Admin Panel  
-![Admin Panel](https://github.com/user-attachments/assets/0f9340fb-86e1-4ef1-84b4-75b1de43e1e0)  
+| 🏠 Homepage | 📜 Story Page | 📂 Admin Panel |  
+|------------|-------------|--------------|  
+| <img src="https://github.com/user-attachments/assets/775eb654-bc8c-4126-9d51-a0e6d5f0f9f6" width="100%"> | <img src="https://github.com/user-attachments/assets/2aeaea6a-92d2-41c4-989c-c69f55498e7d" width="100%"> | <img src="https://github.com/user-attachments/assets/0f9340fb-86e1-4ef1-84b4-75b1de43e1e0" width="100%"> |  
 
 ---
 
